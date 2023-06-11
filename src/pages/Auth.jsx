@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from "react"
 import axios from "axios"
 import AuthContext from "../store/authContext"
-// import '../css/Auth.css'
+import '../css/Auth.css'
 
 const Auth = () => {
     const [username, setUsername] = useState("")

@@ -20,10 +20,10 @@ function App() {
       <Header/>
       <Routes>
         <Route index element={authCtx.userId?<Navigate to = '/home'/>:<Auth/>}/>
+        <Route path='/home' element={authCtx.userId?<Navigate to = '/home'/>}/>
         <Route path='/bars' element={<Bars/>}/>
         <Route path='/body' element={<Body/>}/>
         <Route path='/fork' element={<Fork/>}/>
-        <Route path='/home' element={<Home/>}/>
         <Route path='/pedals' element={<Pedals/>}/>
         <Route path='/suspension' element={<Suspension/>}/>
         <Route path='/tires' element={<Tires/>}/>

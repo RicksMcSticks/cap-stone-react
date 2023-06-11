@@ -11,5 +11,6 @@ module.exports = {
         },
         brand: DataTypes.STRING,
         money: DataTypes.STRING
+        // imgUrl:
     })
 }

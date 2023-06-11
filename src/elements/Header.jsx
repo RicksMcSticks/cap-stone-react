@@ -2,12 +2,13 @@ import { NavLink } from "react-router-dom"
 import { useEffect, useState, useContext } from "react"
 import AuthContext from "../store/authContext"
 
+
 const Header = () => {
 const {userId, logout} = useContext(AuthContext)
 
   return (
     userId ? (
-    <nav>
+    <nav className="head">
         <NavLink to='/'>Auth</NavLink>
         <NavLink to='/bars'>Bars</NavLink>
         <NavLink to='/body'>Body</NavLink>

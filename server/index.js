@@ -7,20 +7,21 @@ const session = require('express-session')
 const {seedDatabase} = require('./util/seed')
 const {User} = require('./models/user.js')
 const {Category} = require('./models/category')
-const {ChosenParts} = require('./models/chosenparts')
+const {ChosenParts} = require('./models/chosenParts')
 const {Part} = require('./models/part')
+
 
 User.hasMany(ChosenParts)
 ChosenParts.belongsTo(User)
 
-ChosenParts.hasMany(Part)
-Part.belongsTo(ChosenParts)
+Part.hasMany(ChosenParts)
+ChosenParts.belongsTo(Part)
 
 Category.hasMany(Part)
 Part.belongsTo(Category)
 
 const {register, login, checkUser, logout} = require('./controllers/authController')
-
+const {getParts, addPart, getUserParts} = require('./controllers/partsController')
 
 const app = express()
 
@@ -37,8 +38,11 @@ app.use(session({
 
 app.post('/api/register', register)
 app.post('/api/login', login)
-// app.get('/api/user', checkUser)
 app.post('/api/logout', logout)
+app.post('/api/part', addPart)
+app.get('/api/user', checkUser)
+app.get('/api/parts', getParts)
+app.get('/api/chosenparts/:userId', getUserParts)
 
 
 sequelize.sync()

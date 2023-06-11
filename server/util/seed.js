@@ -30,7 +30,7 @@ const parts = [
     },
     {
         brand: 'ProTaper',
-        money: '',
+        money: '200',
         categoryId: 1
     },
     {
@@ -42,7 +42,47 @@ const parts = [
         brand: 'Trek',
         money: '2,399.99',
         categoryId: 2
-    }
+    },
+    {
+        brand: 'Fork',
+        money: '399.99',
+        categoryId: 3
+    },
+    {
+        brand: 'super fork',
+        money: '499.99',
+        categoryId: 3
+    },
+    {
+        brand: 'pedals',
+        money: '99.99',
+        categoryId: 4
+    },
+    {
+        brand: 'Super Pedals',
+        money: '299.99',
+        categoryId: 4
+    },
+    {
+        brand: 'sussy',
+        money: '799.99',
+        categoryId: 5
+    },
+    {
+        brand: 'suspension',
+        money: '479.99',
+        categoryId: 5
+    },
+    {
+        brand: 'Tires',
+        money: '89.99',
+        categoryId: 6
+    },
+    {
+        brand: 'Big Tires',
+        money: '119.99',
+        categoryId: 6
+    },
 ]
 
 const seedDatabase = async () => {
