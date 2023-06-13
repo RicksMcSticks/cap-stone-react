@@ -21,7 +21,7 @@ Category.hasMany(Part)
 Part.belongsTo(Category)
 
 const {register, login, checkUser, logout} = require('./controllers/authController')
-const {getParts, addPart, getUserParts} = require('./controllers/partsController')
+const {getParts, addPart, getUserParts, deletePart} = require('./controllers/partsController')
 
 const app = express()
 
@@ -43,6 +43,7 @@ app.post('/api/part', addPart)
 app.get('/api/user', checkUser)
 app.get('/api/parts', getParts)
 app.get('/api/chosenparts/:userId', getUserParts)
+app.delete('/api/parts/:id', deletePart)
 
 
 sequelize.sync()

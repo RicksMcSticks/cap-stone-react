@@ -17,8 +17,10 @@ const Bars = () => {
 
 
 return (
-  <div>
+  <div className= "Background">
+  <div className= "Cards">
     {parts.map(part => <PartsCard part={part}/>)}
+  </div>
   </div>
 )
 }

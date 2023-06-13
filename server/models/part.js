@@ -9,6 +9,7 @@ module.exports = {
             allowNull: false,
             primaryKey: true
         },
+        imageURL: DataTypes.TEXT,
         brand: DataTypes.STRING,
         money: DataTypes.STRING
         // imgUrl:

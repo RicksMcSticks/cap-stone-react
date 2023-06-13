@@ -6,7 +6,7 @@ import AuthContext from '../store/authContext'
 
 
 
-const PartsCard = ({part, inHome}) => {
+const PartsCard = ({part, inHome, getUserParts, chosenPartId}) => {
   const {userId} = useContext(
     AuthContext
   )
@@ -21,13 +21,25 @@ const PartsCard = ({part, inHome}) => {
       .catch(err => console.log(err))
     }
 
-    // useEffect(addPart, [])
+    const deletePart = () => {
+      axios.delete(`/api/parts/${chosenPartId}`)
+          .then(() => {
+              getUserParts()
+          })
+          .catch(err => {
+              console.log(err)
+          })
+  }
+  console.log(part)
 
   return (
     <div className="parts-card">
+      <img src = {part.imageURL}/>
        <h2>{part.brand}</h2>
-       {inHome?null:<button onClick = {addPart}> add</button>}
+      <h2>{part.money}</h2>
+       {inHome?<button onClick={() => deletePart(part.id)}>delete</button>:<button onClick = {addPart}> add</button>}
         </div>
+
   )
 }
 //delete in here switch null with a delete

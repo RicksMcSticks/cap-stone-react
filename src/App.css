@@ -38,9 +38,9 @@
 }
 
 .head {
-    --color: rgb(219, 81, 17) ;
+    --color: rgb(215, 170, 110) ;
     background-color: var(--color);
-    height: 60px;
+    height: 6vh;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -50,17 +50,74 @@
     box-sizing: border-box;
   }
 
+  .header-text {
+    margin-right: 20vw;
+    font-size: 40px;
+  }
+
+  .head-text-2 {
+    font-size: 70px;
+    -webkit-text-fill-color: #f5ed0c;
+  }
+
 
 .parts-card {
+  background-color: grey;
   width: 300px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin: 20px;
+  /* display: flex;
+  flex-direction: row; */
+  /* align-items: center; */
   text-align: center;
   justify-content: space-between;
+  border-radius: 12px;
+  border-top-right-radius: 35px;
+    border-top-left-radius:35px;
+    border-bottom-right-radius: 35px;
+    border-bottom-left-radius: 35px;
+    border-width: 15px;
+    border-style: outset;
+    border-bottom-color: tan;
+    border-top-color: tan;
+    border-left-color: tan;
+    border-right-color: tan;
+}
+
+button {
+  height: 27px;
+  font-size: 16px;
+  padding: 0px 12px;
+  color: #eec6da;
+  background-color: rgb(206, 153, 82);
+  border: 2px solid tan;
+  border-radius: 3px;
+  min-width: 25px;
 }
 
 button:hover {
-  background-color: rgb(109, 57, 186);
+  background-color: rgb(183, 129, 59);
   cursor: pointer;
+}
+
+.Background {
+  /* display: flex;
+  flex-direction: row; */
+  /* justify-content: center; */
+  width: 100%;
+  min-height: 94vh;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  background-size: 100%;
+  background-image: url("https://img.redbull.com/images/c_limit,w_1500,h_1000,f_auto,q_auto/redbullcom/2022/7/21/khux2edp5aura3i0uy7g/red-bull-rampage");
+}
+
+.parts-card img {
+  width: 170px; 
+  height: 155px;
+  border-radius: 12px;
+}
+
+.Cards {
+  display: flex;
+  justify-content: center;
 }

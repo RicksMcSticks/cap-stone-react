@@ -9,7 +9,8 @@ const {userId, logout} = useContext(AuthContext)
   return (
     userId ? (
     <nav className="head">
-        <NavLink to='/'>Auth</NavLink>
+      <header className="header-text">Manly Bikes!</header>
+        {/* <NavLink to='/'>Auth</NavLink> */}
         <NavLink to='/bars'>Bars</NavLink>
         <NavLink to='/body'>Body</NavLink>
         <NavLink to='/fork'>Fork</NavLink>

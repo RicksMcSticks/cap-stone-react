@@ -4,13 +4,13 @@ import AuthContext from '../store/authContext'
 import PartsCard from '../elements/PartsCard'
 
 const Home = () => {
-  const [parts, setPart] = useState([])
+  const [chosenParts, setChosenParts] = useState([])
   const {userId} = useContext(AuthContext)
   console.log(userId)
 
   const getUserParts = () => {
     axios.get(`/api/chosenparts/${userId}`)
-    .then(res => setPart(res.data))
+    .then(res => setChosenParts(res.data))
     .catch(err => console.log(err))
   }
 
@@ -18,10 +18,12 @@ const Home = () => {
     getUserParts()
   }, [userId])
 
-
+  console.log(chosenParts)
     return (
-    <div>
-      {parts.map(part => <PartsCard part={part} inHome={true} />)}
+      <div className= "Background">
+    <div className= "Cards">
+      {chosenParts.map(chosenPart => <PartsCard part={chosenPart.part} inHome={true} chosenPartId= {chosenPart.id} getUserParts= {getUserParts} />)}
+    </div>
     </div>
   )
 }

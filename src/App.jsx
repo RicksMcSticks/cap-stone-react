@@ -20,13 +20,13 @@ function App() {
       <Header/>
       <Routes>
         <Route index element={authCtx.userId?<Navigate to = '/home'/>:<Auth/>}/>
-        <Route path='/home' element={authCtx.userId?<Navigate to = '/home'/>}/>
-        <Route path='/bars' element={<Bars/>}/>
-        <Route path='/body' element={<Body/>}/>
-        <Route path='/fork' element={<Fork/>}/>
-        <Route path='/pedals' element={<Pedals/>}/>
-        <Route path='/suspension' element={<Suspension/>}/>
-        <Route path='/tires' element={<Tires/>}/>
+        <Route path='/home' element={authCtx.userId? <Home/> : <Navigate to='/'/>}/>
+        <Route path='/bars' element={authCtx.userId? <Bars/> : <Navigate to='/'/>}/>
+        <Route path='/body' element={authCtx.userId? <Body/> : <Navigate to='/'/>}/>
+        <Route path='/fork' element={authCtx.userId? <Fork/> : <Navigate to='/'/>}/>
+        <Route path='/pedals' element={authCtx.userId? <Pedals/> : <Navigate to='/'/>}/>
+        <Route path='/suspension' element={authCtx.userId? <Suspension/> : <Navigate to='/'/>}/>
+        <Route path='/tires' element={authCtx.userId? <Tires/> : <Navigate to='/'/>}/>
         
       </Routes>
 

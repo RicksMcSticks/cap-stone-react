@@ -23,7 +23,9 @@ const Auth = () => {
             .catch(err => console.log(err))
     }
     return (
+        <div className="Background">
         <main id="auth-container">
+            <header className="head-text-2">Manly Bikes!</header>
             {register ? (
                 <form onSubmit={e => handleSubmit(e)}>
                     <input
@@ -53,6 +55,7 @@ const Auth = () => {
                 Need to {register ? "log in?" : "register?"}
             </button>
         </main>
+        </div>
     )
 }
 
